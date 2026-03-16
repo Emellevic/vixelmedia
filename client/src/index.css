@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Google Fonts - Vixel Media Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -43,6 +46,15 @@
 }
 
 :root {
+  /* Vixel Media Brand Colors */
+  --vixel-blue: #191BA4;
+  --vixel-yellow: #FFFF00;
+  --vixel-white: #FFFFFF;
+  --vixel-dark-gray: #1a1a1a;
+  --vixel-light-gray: #f5f5f5;
+  --vixel-medium-gray: #808080;
+  
+  /* Tailwind Overrides */
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-600);
@@ -76,6 +88,21 @@
   --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.623 0.214 259.815);
+}
+
+/* Vixel Media Typography System */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.tagline, .accent-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
 }
 
 .dark {
@@ -119,6 +146,17 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  .tagline, .accent-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -173,5 +211,106 @@
       padding-right: 2rem;
       max-width: 1280px; /* Standard content width */
     }
+  }
+}
+
+@layer components {
+  /* Vixel Media Custom Components */
+  
+  /* Primary CTA Button */
+  .btn-primary {
+    @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300;
+    background-color: var(--vixel-blue);
+    color: var(--vixel-white);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--vixel-yellow);
+    color: var(--vixel-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(25, 27, 164, 0.2);
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300;
+    background-color: transparent;
+    color: var(--vixel-blue);
+    border: 2px solid var(--vixel-blue);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--vixel-blue);
+    color: var(--vixel-white);
+  }
+  
+  /* Yellow Accent Line */
+  .accent-line {
+    height: 4px;
+    background-color: var(--vixel-yellow);
+    margin: 1rem 0;
+  }
+  
+  /* Project Card */
+  .project-card {
+    @apply rounded-lg overflow-hidden transition-all duration-300 bg-white;
+    border-left: 4px solid transparent;
+    box-shadow: 0 4px 12px rgba(25, 27, 164, 0.08);
+  }
+  
+  .project-card:hover {
+    border-left-color: var(--vixel-yellow);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(25, 27, 164, 0.15);
+  }
+  
+  /* Service Card */
+  .service-card {
+    @apply p-6 rounded-lg transition-all duration-300;
+    background-color: var(--vixel-light-gray);
+    border-top: 4px solid var(--vixel-blue);
+  }
+  
+  .service-card:hover {
+    background-color: var(--vixel-blue);
+    color: var(--vixel-white);
+  }
+  
+  .service-card:hover h3 {
+    color: var(--vixel-yellow);
+  }
+  
+  /* Testimonial Card */
+  .testimonial-card {
+    @apply p-6 rounded-lg bg-white;
+    border-left: 4px solid var(--vixel-yellow);
+    box-shadow: 0 4px 12px rgba(25, 27, 164, 0.08);
+  }
+  
+  /* Section Heading */
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold mb-4;
+    color: var(--vixel-blue);
+  }
+  
+  .section-heading .highlight {
+    color: var(--vixel-yellow);
+  }
+  
+  /* Sticky Navigation */
+  .sticky-nav {
+    @apply sticky top-0 z-50 bg-white shadow-md transition-all duration-300;
+  }
+  
+  .sticky-nav a {
+    @apply relative inline-block px-4 py-2 transition-all duration-300;
+    color: var(--vixel-blue);
+  }
+  
+  .sticky-nav a:hover::after,
+  .sticky-nav a.active::after {
+    @apply absolute bottom-0 left-0 w-full h-1;
+    background-color: var(--vixel-yellow);
+    content: '';
   }
 }

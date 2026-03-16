@@ -5,12 +5,33 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import CaseStudy from "./pages/CaseStudy";
+import Services from "./pages/Services";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Inquiry from "./pages/Inquiry";
 
+/**
+ * Vixel Media Portfolio Website
+ * 
+ * Design Philosophy: Premium Modern Agency
+ * - Deep Blue (#191BA4) primary color for trust and professionalism
+ * - Pure Yellow (#FFFF00) accent for energy and CTAs
+ * - Poppins (headings), Inter (body), Playfair Display (taglines)
+ * - Minimalist layout with generous spacing and smooth animations
+ */
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/portfolio"} component={Portfolio} />
+      <Route path={"/portfolio/:id"} component={CaseStudy} />
+      <Route path={"/services"} component={Services} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/inquiry"} component={Inquiry} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -18,18 +39,10 @@ function Router() {
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
