@@ -34,14 +34,14 @@ export default function Contact() {
 
       {/* Hero Section */}
       <section 
-        className="py-20 text-white"
+        className="py-20 text-white relative"
         style={{
           backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663297762572/PnneSbqDXnT8nSn7rayF65/hero-abstract-blue-BmKusQeycdqPYJ9Vdj8miH.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h1>
           <p className="text-xl md:text-2xl" style={{ color: "var(--vixel-yellow)" }}>
