@@ -12,7 +12,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function Inquiry() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#ffffff]">
       {/* Navigation */}
       <nav className="sticky-nav">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">

@@ -102,7 +102,7 @@ export default function Portfolio() {
   const categories = ["All", "Logo Design", "Brand Identity", "Event Branding", "Social Media Graphics", "Marketing Design"];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#ffffff]">
       {/* Navigation */}
       <nav className="sticky-nav">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
