@@ -145,7 +145,6 @@ export default function Services() {
           backgroundPosition: "center"
         }}
       >
-        <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Services</h1>
           <p className="text-xl md:text-2xl" style={{ color: "var(--vixel-yellow)" }}>

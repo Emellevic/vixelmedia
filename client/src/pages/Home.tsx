@@ -128,7 +128,6 @@ export default function Home() {
           backgroundPosition: "center"
         }}
       >
-        <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Strategic Graphic Design</h1>
           <p className="tagline text-2xl md:text-3xl mb-8" style={{ color: "var(--vixel-yellow)" }}>
@@ -322,7 +321,6 @@ export default function Home() {
           backgroundPosition: "center"
         }}
       >
-        <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Transform Your Brand?
